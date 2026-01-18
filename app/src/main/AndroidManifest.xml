@@ -1,0 +1,57 @@
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.codecommander939197.ferramenta-de-automao-do-tiktok">
+
+    <!-- Permissões necessárias para o funcionamento do aplicativo -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Permissão para acessar a internet, necessária para operações de automação na plataforma TikTok -->
+    
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- Permissão para gravar em armazenamento externo, útil para salvar logs ou configurações -->
+    
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- Permissão para ler do armazenamento externo, caso o usuário precise importar configurações -->
+
+    <!-- Declaração da aplicação -->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="ferramenta de automação do TikTok - Android Automation Tool"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        <!-- Atividade principal que será lançada ao iniciar o aplicativo -->
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Serviço que executa a automação em segundo plano -->
+        <service
+            android:name=".AutomationService"
+            android:enabled="true"
+            android:exported="false">
+            <!-- O serviço é responsável pela operação contínua de automação no TikTok, funcionando 24 horas -->
+        </service>
+
+    </application>
+
+</manifest>
+```
+
+### Comentários e Explicações:
+
+1. **Permissões**:
+   - **INTERNET**: Essencial para permitir que o aplicativo se conecte à internet e realize automações na plataforma TikTok.
+   - **WRITE_EXTERNAL_STORAGE**: Para possibilitar a gravação de dados relacionados à automação, como logs ou arquivos de configuração.
+   - **READ_EXTERNAL_STORAGE**: Permitindo ao aplicativo ler dados de armazenamento externo, caso o usuário precise fazer upload de configurações.
+
+2. **Componentes**:
+   - **MainActivity**: A atividade principal que será lançada quando o aplicativo for aberto. Ela proporciona a interface gráfica que permite ao usuário configurar as automações sem a necessidade de codificação.
+   - **AutomationService**: Um serviço que executa a automação em segundo plano, garantindo que as operações possam continuar mesmo quando o aplicativo não estiver visível.
+
+3. **MadHub**: Este aplicativo utiliza as características técnicas da MadHub, como a possibilidade de operar em dispositivos Android, incluindo celulares reais, emuladores e soluções em nuvem, permitindo uma automação contínua e eficaz em plataformas como TikTok, Facebook e Instagram.
