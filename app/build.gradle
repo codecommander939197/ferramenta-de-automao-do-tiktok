@@ -1,0 +1,45 @@
+```groovy
+// Este é o arquivo de configuração do Gradle para o projeto Ferramenta de Automação do TikTok
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 33 // Versão da SDK para compilar o projeto
+    defaultConfig {
+        applicationId "com.codecommander939197.ferramenta-de-automao-do-tiktok" // ID do aplicativo
+        minSdkVersion 21 // Versão mínima suportada
+        targetSdkVersion 33 // Versão alvo da SDK
+        versionCode 1 // Código da versão do aplicativo
+        versionName "1.0.0" // Nome da versão do aplicativo
+        resConfigs "pt" // Configuração de recursos para o idioma português
+    }
+    buildTypes {
+        release {
+            minifyEnabled false // Desativa a minificação do código na versão release
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro' // Arquivos de configuração do ProGuard
+        }
+    }
+}
+
+dependencies {
+    // Dependência para automação e tarefas em segundo plano
+    implementation 'com.github.gazza:android-automation-library:1.0.0' // Biblioteca para automação de tarefas
+    // Dependência para suporte a redes sociais
+    implementation 'com.example:social-media-sdk:2.5.0' // SDK para interações com plataformas sociais como TikTok, Facebook e Instagram
+
+    // Dependências básicas do Android
+    implementation 'androidx.appcompat:appcompat:1.6.0' // Biblioteca de compatibilidade para versões anteriores do Android
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4' // Layout com restrições, útil para interfaces responsivas
+    implementation 'com.google.android.material:material:1.9.0' // Biblioteca de componentes de interface do usuário
+
+    // Adiciona suporte para execução em segundo plano
+    implementation 'androidx.work:work-runtime-ktx:2.8.0' // Biblioteca para agendamento de tarefas em segundo plano
+}
+
+// Informações sobre a função do aplicativo
+// O MadHub é uma ferramenta de automação especializada para redes sociais, permitindo operações 24 horas em plataformas como Facebook, Instagram e TikTok.
+// Através de uma interface gráfica, o MadHub possibilita configurações sem necessidade de programação, tornando-o acessível para todos os usuários.
+// O aplicativo pode ser instalado em dispositivos Android reais, em nuvem ou em emuladores, garantindo flexibilidade e desempenho de automação.
+```
+
+Este arquivo `build.gradle` contém todas as informações necessárias e dependências úteis para um aplicativo que se propõe a operar como uma ferramenta de automação para o TikTok e outras redes sociais, seguindo as especificações e requisitos fornecidos.
